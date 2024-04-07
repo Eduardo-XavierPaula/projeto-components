@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
 import { CardsButtonComponent } from '../cards-button/cards-button.component';
 import { CardButtonCancelComponent } from '../card-button-cancel/card-button-cancel.component';
-
-
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -12,11 +11,7 @@ import { CardButtonCancelComponent } from '../card-button-cancel/card-button-can
     CardsButtonComponent,
     CardButtonCancelComponent,
   ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    CardComponent,
-  ]
+  imports: [CommonModule, MatSliderModule],
+  exports: [CardComponent],
 })
-export class CardsModule { }
+export class CardsModule {}

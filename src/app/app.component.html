@@ -2,3 +2,16 @@
   <app-card></app-card>
   <app-card></app-card>
 </div>
+
+<input
+  [type]="inputType"
+  id="meu-input"
+  [value]="inputText"
+  [disabled]="isDisabled"
+  (keyup)="handleInputKeyup($event)"
+  (input)="handleInputEvent($event)"
+/>
+
+<button (click)="enableDisableInput()">Habilitar/Desabilitar</button>
+<button (click)="setTextPassword()">Text/Password</button>
+<button (click)="logInputText()">Log</button>

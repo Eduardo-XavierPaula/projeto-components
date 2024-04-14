@@ -11,7 +11,50 @@
   (keyup)="handleInputKeyup($event)"
   (input)="handleInputEvent($event)"
 />
-
-<button (click)="enableDisableInput()">Habilitar/Desabilitar</button>
-<button (click)="setTextPassword()">Text/Password</button>
-<button (click)="logInputText()">Log</button>
+<div>
+  <button
+    (click)="enableDisableInput()"
+    [style.width]="widthButton1"
+    [style.backgroundColor]="bgButton1"
+  >
+    Habilitar/Desabilitar
+  </button>
+  <button
+    (click)="setTextPassword()"
+    [style.width.px]="widthButton2"
+    [style.backgroundColor]="'pink'"
+  >
+    Text/Password
+  </button>
+  <button [style]="stylesObj" (click)="logInputText()">Log</button>
+</div>
+<div>
+  <button [attr.title]="buttonTitle">teste</button>
+  <button [title]="buttonTitle">teste</button>
+  <button [attr.disabled]="buttonDisable ? buttonDisable : null">
+    Disabled
+  </button>
+  <button (click)="onButtonClick()">Mudar props</button>
+</div>
+<div>
+  <button [style]="stylesObj2" (click)="updateStyleObj()">Atualizar obj</button>
+  <button [style]="stylesObj2" (click)="updateStyleObjCorrect()">
+    Atualizar obj correto
+  </button>
+</div>
+<div>
+  <button [class.red-button]="true" (click)="isGreenButton = false">
+    Vermelho
+  </button>
+  <button [class.green-button]="true" (click)="isGreenButton = true">
+    Verde
+  </button>
+  <button
+    [class]="{
+      'red-button': !isGreenButton,
+      'green-button': isGreenButton
+    }"
+  >
+    Objeto
+  </button>
+</div>

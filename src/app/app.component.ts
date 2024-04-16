@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  cardPlanType = 'Simples';
+  cardPlanPrice = 100;
+  cardPlanTypeComplete = 'Completo';
+  cardPlanPriceComplete = 250;
+
+  // binding
   inputText = 'Text Inicial Alterado';
   inputType = 'text';
   isDisabled = false;
@@ -63,5 +69,9 @@ export class AppComponent {
       width: '170px',
       backgroundColor: 'lightblue',
     };
+  }
+
+  handlePlanType(text: string) {
+    this.cardPlanType = text;
   }
 }
